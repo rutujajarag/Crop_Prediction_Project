@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart AI Crop Recommendation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 35px;
+            width: 420px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0 15px 0;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 5px #81c784;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #2e7d32, #66bb6a);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        @media(max-width: 480px){
+            .container{
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1>🌾 Smart Crop Prediction</h1>
+    <div class="subtitle">AI Powered Agricultural Recommendation System</div>
+
+    <form method="POST">
+
+        <label>Nitrogen (kg/ha)</label>
+        <input type="number" step="any" min="0" max="140" name="N" required>
+
+        <label>Phosphorus (kg/ha)</label>
+        <input type="number" step="any" min="5" max="145" name="P" required>
+
+        <label>Potassium (kg/ha)</label>
+        <input type="number" step="any" min="5" max="205" name="K" required>
+
+        <label>Temperature (°C)</label>
+        <input type="number" step="any" min="0" max="45" name="T" required>
+
+        <label>Humidity (%)</label>
+        <input type="number" step="any" min="14" max="99" name="H" required>
+
+        <label>Soil pH</label>
+        <input type="number" step="any" min="3.5" max="9.9" name="ph" required>
+
+        <label>Rainfall (mm)</label>
+        <input type="number" step="any" min="20" max="300" name="R" required>
+
+        <input type="submit" value="🌱 Predict Best Crop">
+
+    </form>
+</div>
+
+</body>
+</html>
